@@ -17,4 +17,4 @@ app.post("/pessoa", function(req, res){
     })
 });
 
-app.listen(3000, ()=>console.log("Api Rodando2"))
+app.listen(3000, ()=>console.log("Api Rodando"))
