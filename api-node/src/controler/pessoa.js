@@ -9,7 +9,7 @@ export async function createTable(){
 export async function selectPessoas(req, res){
     return openDb().then(db=>{
         return db.all('SELECT * FROM Pessoa')
-        .then(pessoas=> res.jason(pessoas))
+        .then(pessoas=> res.json(pessoas))
     });
 }
 
@@ -17,7 +17,7 @@ export async function selectPessoa(req, res){
     let id = req.bod.id;
     openDb().then(db=>{
         db.get('SELECT * FROM Pessoa WHERE id=?', [id])
-        .then(pessoa=> res.jason(pessoa))
+        .then(pessoa=> res.json(pessoa))
     });
 }
 

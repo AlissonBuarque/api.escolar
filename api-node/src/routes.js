@@ -12,8 +12,8 @@ router.get('/', (req, res)=>{
 
 router.get('/pessoas', selectPessoas);
 router.get('/pessoa', selectPessoa);
-router.post('/pessoas', insertPessoa);
-router.put('/pessoas', updatePessoa);
-router.delete('/pessoas', deletePessoa);
+router.post('/pessoa', insertPessoa);
+router.put('/pessoan', updatePessoa);
+router.delete('/pessoa', deletePessoa);
 
 export default router;
