@@ -13,7 +13,7 @@ router.get('/', (req, res)=>{
 router.get('/pessoas', selectPessoas);
 router.get('/pessoa', selectPessoa);
 router.post('/pessoa', insertPessoa);
-router.put('/pessoan', updatePessoa);
+router.put('/pessoa', updatePessoa);
 router.delete('/pessoa', deletePessoa);
 
 export default router;
