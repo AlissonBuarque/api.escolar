@@ -5,10 +5,15 @@ import express from 'express';
 import fs from 'fs';
 import https from 'https';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 
 import router from './routes.js'
 app.use(router);

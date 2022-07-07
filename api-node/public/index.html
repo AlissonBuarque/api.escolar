@@ -1,5 +1,3 @@
- 
-
 <!DOCTYPE html>
 <!-- === Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
@@ -18,12 +16,14 @@
 </head>
 <body>
     
+
+
     <div class="container">
         <div class="forms">
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="#">
+                <form action="/pessoa" method="post">
                     <div class="input-field">
                         <input type="text" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
@@ -102,7 +102,7 @@
 
 
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        <input class="singnupBottow" type="submit" value="Signup">
                     </div>
                 </form>
 
@@ -112,10 +112,108 @@
                     </span>
                 </div>
             </div>
+
+            <nav class="nav">
+                <ul class="nav-content">
+                    <li class="nav-list">
+                        <a href="#" class="link-item active">
+                            <i class='bx bxs-home link-icon'></i>
+                            <span class="link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-caret-right-square link-icon'></i>
+                            <span class="link-text">Content</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-bar-chart-square link-icon'></i>
+                            <span class="link-text">Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-message-rounded link-icon'></i>
+                            <span class="link-text">Comments</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-user link-icon'></i>
+                            <span class="link-text">Profile</span>
+                        </a>
+                    </li>
+    
+                    <span class="indicator"></span>
+                </ul>
+            </nav>
+
         </div>
     </div>
 
-    <script src="src/code.js"></script>
+
+
+
+
+    <script>
+        const container = document.querySelector(".container"),
+      pwShowHide = document.querySelectorAll(".showHidePw"),
+      pwFields = document.querySelectorAll(".password"),
+      signUp = document.querySelector(".signup-link"),
+      login = document.querySelector(".login-link");
+    //   let singnupBottow = document.querySelector(".singnupBottow");
+
+    //   js code to show/hide password and change icon
+    pwShowHide.forEach(eyeIcon =>{
+        eyeIcon.addEventListener("click", ()=>{
+            pwFields.forEach(pwField =>{
+                if(pwField.type ==="password"){
+                    pwField.type = "text";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("uil-eye-slash", "uil-eye");
+                    })
+                }else{
+                    pwField.type = "password";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                    })
+                }
+            }) 
+        })
+    })
+
+    // js code to appear signup and login form
+    signUp.addEventListener("click", ( )=>{
+        container.classList.add("active");
+    });
+    login.addEventListener("click", ( )=>{
+        container.classList.remove("active");
+    });
+    // singnupBottow.addEventListener("click", ( )=>{
+    //     alert("sucesso")
+    // });
+
+    // js code nav bar 
+    const linkItems = document.querySelectorAll(".link-item");
+
+    linkItems.forEach((linkItem, index) => {
+        linkItem.addEventListener("click", () => {
+            document.querySelector(".active").classList.remove("active");
+            linkItem.classList.add("active");
+    
+            const indicator = document.querySelector(".indicator");
+    
+            indicator.style.left = `${index * 95 + 48}px`;
+        })
+    });
+    </script>
+
+
+
 </body>
 </html>
 

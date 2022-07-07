@@ -4,11 +4,12 @@ import { createTable, insertPessoa, updatePessoa, selectPessoa, selectPessoas, d
 const router = Router();
 
 router.get('/', (req, res)=>{
-    res.json({
-        "statusCode": 200,
-        "msg": "Api Rodando"
-    })
-})
+    // res.json({
+    //     "statusCode": 200,
+    //     "msg": "Api Rodando"
+    // })
+    return res.redirect('index.html')
+});
 
 router.get('/pessoas', selectPessoas);
 router.get('/pessoa', selectPessoa);
@@ -17,3 +18,4 @@ router.put('/pessoa', updatePessoa);
 router.delete('/pessoa', deletePessoa);
 
 export default router;
+

@@ -178,3 +178,11 @@ body{
     margin-top: 30px;
     text-align: center;
 }
+
+nav{
+    border-radius: 12px;
+    background: rgb(12, 239, 39);
+    padding: 0 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
